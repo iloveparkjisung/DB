@@ -26,6 +26,7 @@ menu_option = ''
 while menu_option != 'DONE':
     menu_option = input('Welcome to the Songs database \n\n'
                         'Where would you like to go? (please type in the letter)\n'
+                        'A: All Information\n'
                         'B: All Nct and WayV members\n'
                         'C: Ateez\n'
                         'D: Enhypen\n'
@@ -33,7 +34,16 @@ while menu_option != 'DONE':
                         'F: Seventeen\n'
                         'G: Straykids\n'
                         'H: Wayv\n'
-                        'H: Wayv\n'
+                        'I: Idols over 180cm\n'
+                        'J: Not from Korea\n'
+                        'K: Idols that were born in 2000 and after\n'
+                        'L: Top 10 oldest\n'
+                        'M: Top 10 tallest\n'
+                        'N: Top 10 tallest in NCT\n'
+                        'O: Top 10 Youngest\n'
+                        "P: All the lee's in kpop\n"
+                        'Q: Idols that are the age 25 and below\n'
+                        
                         'done : Exit\n\nWhere would you like to go?: ')
     menu_option = menu_option.upper()
     if menu_option == 'A':
