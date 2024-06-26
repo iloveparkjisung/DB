@@ -49,14 +49,36 @@ while menu_option != 'DONE':
     if menu_option == 'A':
         print_query('All information')
     elif menu_option == 'B':
-        print_query('Kpop')
+        print_query('All Nct and WayV members')
     elif menu_option == 'C':
-        print_query('RNB and pop')
+        print_query('Ateez')
     elif menu_option == 'D':
-        print_query('Other Than Kpop and RNB')
+        print_query('Enhypen')
     elif menu_option == 'E':
-        print_query('Top 5 Kpop')
+        print_query('NCT')
     elif menu_option == 'F':
-        print_query('Music Length')
+        print_query('Seventeen')
+    elif menu_option == 'G':
+        print_query('Straykids')
+    elif menu_option == 'H':
+        print_query('Wayv')
+    elif menu_option == 'I':
+        print_query('Idols over 180cm')
+    elif menu_option == 'J':
+        print_query('Not from Korea')
+    elif menu_option == 'K':
+        print_query('Idols that were born in 2000 and after')
+    elif menu_option == 'L':
+        print_query('Top 10 oldest')
+    elif menu_option == 'M':
+        print_query("Top 10 tallest")
+    elif menu_option == 'N':
+        print_query('Top 10 tallest in NCT')
+    elif menu_option == 'O':
+        print_query('Top 10 Youngest')
+    elif menu_option == 'P':
+        print_query("All the lee's in kpop")
+    elif menu_option == 'Q':
+        print_query('Idols that are the age 25 and below')
     elif menu_option == 'DONE':
         print('Thanks for using me')
