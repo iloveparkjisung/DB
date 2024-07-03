@@ -22,4 +22,7 @@ def print_parameter_query(fields:str, where:str, parameter):
 
 kpop_group = input('Which kpop group would you like to see: ')
 print_parameter_query("kpop_group, real_name, stage_name, age","kpop_group = ? ORDER BY age DESC", kpop_group)
+
+ethnicity = input('Which ethnicity would you like to see? ')
+print_parameter_query("kpop_group, real_name, stage_name, age, ethnicity","ethnicity = ? ORDER BY age DESC", ethnicity)
     

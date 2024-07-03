@@ -5,6 +5,21 @@ from tabulate import tabulate
 # This is the filename of the database to be used
 DB_NAME = 'kpop.db'
 
+def print_parameter_query(fields:str, where:str, parameter):
+    """ Prints the results for a parameter query in tabular form. """
+    db = sqlite3.connect(DB_NAME)
+    cursor = db.cursor()
+    sql = ("SELECT " + fields + " FROM " + TABLES + " WHERE " + where)
+    cursor.execute(sql,(parameter,))
+    results = cursor.fetchall()
+    print(tabulate(results,fields.split(",")))
+    db.close()  
+
+TABLES = (" idol "
+           "LEFT JOIN ethnicitys ON idol.ethnicity_id = ethnicitys.ethnicity_id "
+           "LEFT JOIN groups ON idol.group_id = groups.group_id "
+           "LEFT JOIN ages ON idol.age_id = ages.age_id ")
+
 def print_query(view_name:str):
     ''' Prints the specified view from the database in a table '''
     # Set up the connection to the database
@@ -37,14 +52,9 @@ while menu_option != 'DONE':
                         'Please enter a letter that is from A - O to navigate throught the menu.\n'
                         "Please type 'DONE' to exit the database\n"
                         'A: All Information\n'
-                        'B: Ateez Members Names\n'
-                        'C: Enhypen Members Names\n'
-                        'D: NCT Members Names\n'
-                        'E: Seventeen Members Names\n'
-                        'F: Straykids Members Names\n'
-                        'G: Wayv Members Names\n'
+                        'B: Kpop groups members\n'
                         'H: Idols over 180cm\n'
-                        'I: Not from Korea\n'
+                        'I: Ethinicty\n'
                         'J: Idols that were born in 2000 and after\n'
                         'K: Top 10 oldest\n'
                         'L: Top 10 tallest\n'
@@ -57,21 +67,30 @@ while menu_option != 'DONE':
     if menu_option == 'A':
         print_query('All information')
     elif menu_option == 'B':
-        print_query('Ateez Members Names')
-    elif menu_option == 'C':
-        print_query('Enhypen Members Names')
-    elif menu_option == 'D':
-        print_query('NCT Members Names')
-    elif menu_option == 'E':
-        print_query('Seventeen Members Names')
-    elif menu_option == 'F':
-        print_query('Straykids Members Names')
-    elif menu_option == 'G':
-        print_query('Wayv Members Names')
+        print('Here are the Kpop groups:\n'
+              ' - nct 127\n'
+              ' - nct dream\n'
+              ' - wayv\n'
+              ' - riize\n'
+              ' - ateez\n'
+              ' - enhypen\n'
+              ' - seventeen\n'
+              ' - straykids\n')
+        kpop_group = input('Which kpop group would you like to see: ')
+        print_parameter_query("kpop_group, real_name, stage_name, age","kpop_group = ? ORDER BY age DESC", kpop_group.lower())
     elif menu_option == 'H':
         print_query('Idols over 180cm')
     elif menu_option == 'I':
-        print_query('Not from Korea')
+        print('Here are the Ethnicitys of the Kpop Idols:\n'
+              ' - South Korea\n'
+              ' - China\n'
+              ' - USA\n'
+              ' - Japan\n'
+              ' - Australia\n'
+              ' - Canada\n'
+              ' - Thailand\n')
+        ethnicity = input('Which ethnicity would you like to see? ')
+        print_parameter_query("kpop_group, real_name, stage_name, age, ethnicity","ethnicity = ? ORDER BY age DESC", ethnicity)
     elif menu_option == 'J':
         print_query('Idols that were born in 2000 and after')
     elif menu_option == 'K':
