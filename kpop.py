@@ -21,13 +21,12 @@ def print_query(view_name:str):
     # Print the results in a table with the headings
     print(tabulate(results,headings))
     db.close()
-
+   
 menu_option = ''
 while menu_option != 'DONE':
     menu_option = input('Welcome to the Kpop database \n\n'
                         'This menu contains information about Kpop:\n'
                         '   - Groups\n'
-                        '   - Idols\n'
                         "   - Idol's stage name\n"
                         "   - Idol's real name\n"
                         "   - Idol's ages\n"
@@ -36,7 +35,7 @@ while menu_option != 'DONE':
                         "   - Idol's height\n"
                         "   - Idol's instagram\n\n"
                         'Please enter a letter that is from A - O to navigate throught the menu.\n'
-                        'Please type "DONE" to exit the database\n'
+                        "Please type 'DONE' to exit the database\n"
                         'A: All Information\n'
                         'B: Ateez Members Names\n'
                         'C: Enhypen Members Names\n'
