@@ -53,14 +53,14 @@ while menu_option != 'DONE':
                         "Please type 'DONE' to exit the database\n"
                         'A: All Information\n'
                         'B: Kpop groups members\n'
-                        'H: Idols over 180cm\n'
-                        'I: Ethinicty\n'
-                        'J: Idols that were born in 2000 and after\n'
-                        'K: Top 10 oldest\n'
-                        'L: Top 10 tallest\n'
-                        'M: Top 10 Youngest\n'
-                        "N: All the lee's in kpop\n"
-                        'O: Idols that are the age 25 and below\n'
+                        'C: Idols over 180cm\n'
+                        'D: Ethinicty\n'
+                        'E: Idols Age\n'
+                        'F: Top 10 oldest\n'
+                        'G: Top 10 tallest\n'
+                        'H: Top 10 Youngest\n'
+                        "I: All the lee's in kpop\n"
+                        'J: Idols that are the age 25 and below\n'
                         'DONE: Exit\n\n'
                         'Where would you like to go? ')
     menu_option = menu_option.upper()
@@ -78,9 +78,9 @@ while menu_option != 'DONE':
               ' - straykids\n')
         kpop_group = input('Which kpop group would you like to see: ')
         print_parameter_query("kpop_group, real_name, stage_name, age","kpop_group = ? ORDER BY age DESC", kpop_group.lower())
-    elif menu_option == 'H':
+    elif menu_option == 'C':
         print_query('Idols over 180cm')
-    elif menu_option == 'I':
+    elif menu_option == 'D':
         print('Here are the Ethnicitys of the Kpop Idols:\n'
               ' - South Korea\n'
               ' - China\n'
@@ -90,18 +90,18 @@ while menu_option != 'DONE':
               ' - Canada\n'
               ' - Thailand\n')
         ethnicity = input('Which ethnicity would you like to see? ')
-        print_parameter_query("kpop_group, real_name, stage_name, age, ethnicity","ethnicity = ? ORDER BY age DESC", ethnicity)
-    elif menu_option == 'J':
-        print_query('Idols that were born in 2000 and after')
-    elif menu_option == 'K':
+        print_parameter_query("kpop_group, real_name, stage_name, age, ethnicity","ethnicity = ? ORDER BY age DESC", ethnicity.capitalize())
+    elif menu_option == 'E':
+        print('The ages available are 19 - 29')
+        age = input('What age would you like to see: ')
+        print_parameter_query("kpop_group, real_name, stage_name, age","age = ? ORDER BY age DESC", age)       
+    elif menu_option == 'F':
         print_query('Top 10 oldest')
-    elif menu_option == 'L':
+    elif menu_option == 'G':
         print_query("Top 10 tallest")
-    elif menu_option == 'M':
+    elif menu_option == 'H':
         print_query('Top 10 Youngest')
-    elif menu_option == 'N':
+    elif menu_option == 'I':
         print_query("All the lee's in kpop")
-    elif menu_option == 'O':
-        print_query('Idols that are the age 25 and below')
     elif menu_option == 'DONE':
         print('Thanks for using me! \nPlease come again!!!')

@@ -20,6 +20,9 @@ def print_parameter_query(fields:str, where:str, parameter):
     print(tabulate(results,fields.split(",")))
     db.close()  
 
+age = input('What age would you like to see: ')
+print_parameter_query("kpop_group, real_name, stage_name, age","age = ? ORDER BY age DESC", age)
+
 kpop_group = input('Which kpop group would you like to see: ')
 print_parameter_query("kpop_group, real_name, stage_name, age","kpop_group = ? ORDER BY age DESC", kpop_group)
 
