@@ -77,8 +77,8 @@ while menu_option != 'DONE':
         kpop_group = input('Which kpop group would you like to see: ')
         print_parameter_query("kpop_group, real_name, stage_name, age","kpop_group = ? ORDER BY age DESC", kpop_group.lower())
     elif menu_option == 'C':
-        height = input('What height  would you like to see: ')
         print('The height available are 165 - 187')
+        height = input('What height  would you like to see: ')
         print_parameter_query("kpop_group, real_name, stage_name, age, height","height = ? ORDER BY age DESC", height)
     elif menu_option == 'D':
         print('Here are the Ethnicitys of the Kpop Idols:\n'
@@ -90,7 +90,7 @@ while menu_option != 'DONE':
               ' - Canada\n'
               ' - Thailand\n')
         ethnicity = input('Which ethnicity would you like to see? ')
-        print_parameter_query("kpop_group, real_name, stage_name, age, ethnicity","ethnicity = ? ORDER BY age DESC", ethnicity)
+        print_parameter_query("kpop_group, real_name, stage_name, age, ethnicity","ethnicity = ? ORDER BY age DESC", ethnicity.lower())
     elif menu_option == 'E':
         print('The ages available are 19 - 29')
         age = input('What age would you like to see: ')
