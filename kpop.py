@@ -49,18 +49,17 @@ while menu_option != 'DONE':
                         "   - Idol's Ethnicity\n"
                         "   - Idol's height\n"
                         "   - Idol's instagram\n\n"
-                        'Please enter a letter that is from A - O to navigate throught the menu.\n'
+                        'Please enter a letter that is from A -I to navigate throught the menu.\n'
                         "Please type 'DONE' to exit the database\n"
                         'A: All Information\n'
                         'B: Kpop groups members\n'
-                        'C: Idols over 180cm\n'
+                        'C: Idols Height\n'
                         'D: Ethinicty\n'
                         'E: Idols Age\n'
                         'F: Top 10 oldest\n'
                         'G: Top 10 tallest\n'
                         'H: Top 10 Youngest\n'
                         "I: All the lee's in kpop\n"
-                        'J: Idols that are the age 25 and below\n'
                         'DONE: Exit\n\n'
                         'Where would you like to go? ')
     menu_option = menu_option.upper()
@@ -79,7 +78,9 @@ while menu_option != 'DONE':
         kpop_group = input('Which kpop group would you like to see: ')
         print_parameter_query("kpop_group, real_name, stage_name, age","kpop_group = ? ORDER BY age DESC", kpop_group.lower())
     elif menu_option == 'C':
-        print_query('Idols over 180cm')
+        height = input('What height  would you like to see: ')
+        print('The height available are 165 - 187')
+        print_parameter_query("kpop_group, real_name, stage_name, age, height","height = ? ORDER BY age DESC", height)
     elif menu_option == 'D':
         print('Here are the Ethnicitys of the Kpop Idols:\n'
               ' - South Korea\n'
@@ -102,6 +103,6 @@ while menu_option != 'DONE':
     elif menu_option == 'H':
         print_query('Top 10 Youngest')
     elif menu_option == 'I':
-        print_query("All the lee's in kpop")
+        print_query("All the lee in kpop")
     elif menu_option == 'DONE':
         print('Thanks for using me! \nPlease come again!!!')
