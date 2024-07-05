@@ -70,7 +70,6 @@ while menu_option != 'DONE':
               ' - nct 127\n'
               ' - nct dream\n'
               ' - wayv\n'
-              ' - riize\n'
               ' - ateez\n'
               ' - enhypen\n'
               ' - seventeen\n'
