@@ -90,7 +90,7 @@ while menu_option != 'DONE':
               ' - Canada\n'
               ' - Thailand\n')
         ethnicity = input('Which ethnicity would you like to see? ')
-        print_parameter_query("kpop_group, real_name, stage_name, age, ethnicity","ethnicity = ? ORDER BY age DESC", ethnicity.capitalize())
+        print_parameter_query("kpop_group, real_name, stage_name, age, ethnicity","ethnicity = ? ORDER BY age DESC", ethnicity)
     elif menu_option == 'E':
         print('The ages available are 19 - 29')
         age = input('What age would you like to see: ')
